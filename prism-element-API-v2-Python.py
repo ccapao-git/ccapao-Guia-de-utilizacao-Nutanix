@@ -41,4 +41,3 @@ for vm in vms['entities']:
     # ciclo for vai criar clones das VMs do cluster tendo como resultado o seguinte nome: vmname.clone
 
 myAPI.session_close()
-
