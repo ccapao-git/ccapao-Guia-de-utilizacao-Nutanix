@@ -22,12 +22,14 @@ cursor = conn.cursor( cursors.DictCursor );
 cursor.execute( "SELECT * FROM pet" )
 data = cursor.fetchall()
 
-print "Content-type: text/html"
+print 'Content-type: text/html'
 print
-print "<html><head>"
-print ""
-print "</head><body>"
+print '<html><head>'
+print 
+print '</head><body>'
 print "  Web Server: " + srvhostname + "<br>"
 print "  DB Server: " + conn.host + ":" + str(conn.port) + "<br><br>"
 print(json2html.convert(json = data))
-print "</body></html>"
+print '<br><br>'
+print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
+print '</body></html>'
