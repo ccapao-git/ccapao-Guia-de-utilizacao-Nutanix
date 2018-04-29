@@ -32,6 +32,16 @@ print
 print "  Web Server: " + srvhostname + "<br>"
 print "  DB Server: " + conn.host + ":" + str(conn.port) + "<br><br>"
 print(json2html.convert(json = data))
+
+print '<br><br>'
+cursor.execute( "SELECT @@hostname" )
+data = cursor.fetchall()
+print(json2html.convert(json = data))
+
+print
+print "  Web Server: " + srvhostname + "<br>"
+print "  DB Server: " + conn.host + ":" + str(conn.port) + "<br><br>"
+print(json2html.convert(json = data))
 print '<br><br>'
 print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
 print '</body></html>'
