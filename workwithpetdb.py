@@ -4,7 +4,13 @@ from pymysql import connect, err, sys, cursors
 from json2html import *
 import socket
 import cgitb
-cgitb.enable()
+#cgitb.enable()
+
+print 'Content-type: text/html'
+print
+print '<html><head>'
+print '<title>MYAPP</title>'
+print '</head><body>'
 
 if socket.gethostname().find('.')>=0:
     srvhostname=socket.gethostname()
@@ -22,11 +28,7 @@ cursor = conn.cursor( cursors.DictCursor );
 cursor.execute( "SELECT * FROM pet" )
 data = cursor.fetchall()
 
-print 'Content-type: text/html'
 print
-print '<html><head>'
-print 
-print '</head><body>'
 print "  Web Server: " + srvhostname + "<br>"
 print "  DB Server: " + conn.host + ":" + str(conn.port) + "<br><br>"
 print(json2html.convert(json = data))
