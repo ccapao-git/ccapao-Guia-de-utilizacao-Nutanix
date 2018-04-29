@@ -34,7 +34,7 @@ print "  DB Server: " + conn.host + ":" + str(conn.port) + "<br><br>"
 print(json2html.convert(json = data))
 
 print '<br><br>'
-cursor.execute( "SHOW SESSION VARIABLES WHERE Variable_name IN ('wsrep_cluster_name', 'wsrep_cluster_address', 'wsrep_node_address', 'version', 'wsrep_node_name', 'hostname')" )
+cursor.execute( "SHOW SESSION VARIABLES WHERE Variable_name IN ('wsrep_cluster_name', 'wsrep_cluster_address', 'wsrep_node_address', 'version', 'wsrep_node_name', 'hostname', 'timestamp')" )
 data = cursor.fetchall()
 print(json2html.convert(json = data))
 
