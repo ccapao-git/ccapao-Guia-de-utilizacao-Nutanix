@@ -1,5 +1,5 @@
 #!/bin/sh
-# CALM Service Name = WEBSERVICE
+# CALM Service Name = WebService
 
 set -ex
 
