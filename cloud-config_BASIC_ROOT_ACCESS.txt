@@ -1,5 +1,9 @@
 #cloud-config
 disable_root: False
 ssh_pwauth: True
-password: nutanix/4u
-chpasswd: { expire: False }
+password: 
+chpasswd:
+  list: |
+     root:nutanix/4u
+     centos:nutanix/4u
+  expire: False
