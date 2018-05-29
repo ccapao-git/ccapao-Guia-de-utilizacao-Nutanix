@@ -13,13 +13,13 @@ sudo yum update -y
 
 sudo yum install -y haproxy
 
-sudo yum install -y firewalld
-sudo systemctl enable firewalld
-sudo systemctl start firewalld
+#sudo yum install -y firewalld
+#sudo systemctl enable firewalld
+#sudo systemctl start firewalld
 
-sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
-sudo firewall-cmd --reload
-sudo firewall-cmd --list-all
+#sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+#sudo firewall-cmd --reload
+#sudo firewall-cmd --list-all
 
 sudo tee -a /etc/haproxy/haproxy.cfg <<<'frontend http_front
  bind *:80
