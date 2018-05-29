@@ -13,13 +13,13 @@ sudo yum update -y
 
 sudo yum install -y mariadb-server
 
-sudo yum install -y firewalld
-sudo systemctl enable firewalld
-sudo systemctl start firewalld
+#sudo yum install -y firewalld
+#sudo systemctl enable firewalld
+#sudo systemctl start firewalld
 
-sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
-sudo firewall-cmd --reload
-sudo firewall-cmd --list-all
+#sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
+#sudo firewall-cmd --reload
+#sudo firewall-cmd --list-all
 
 sudo systemctl enable mariadb
 sudo systemctl start mariadb
