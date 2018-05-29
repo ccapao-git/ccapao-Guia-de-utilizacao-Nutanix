@@ -1,5 +1,7 @@
 #!/bin/sh
 # CALM Service Name = WebService
+# AVISO: ter em conta que os packages sao download do repositorio publico directamente, 
+#        pelo que pode levar algum tempo a concluir
 
 set -ex
 
