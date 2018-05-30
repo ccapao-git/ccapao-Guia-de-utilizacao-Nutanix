@@ -7,8 +7,8 @@ from requests.auth import HTTPBasicAuth
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 myMainURL = 'https://prismipaddress:9440/PrismGateway/services/rest/v2.0/'
-myUser = ’yourusername'
-myPass = ’yourpassword'
+myUser = 'yourusername'
+myPass = 'yourpassword'
 
 
 class ManageAPI():
