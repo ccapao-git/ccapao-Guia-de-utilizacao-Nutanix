@@ -3,6 +3,8 @@
 # AVISO: ter em conta que os packages sao download do repositorio publico directamente, 
 #        pelo que pode levar algum tempo a concluir
 
+# AVISO: ter atenção ao comportamento na falha de um 2-node cluster http://galeracluster.com/documentation-webpages/twonode.html
+
 set -ex
 
 sudo hostnamectl set-hostname @@{name}@@
