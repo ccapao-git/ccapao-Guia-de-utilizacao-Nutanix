@@ -7,12 +7,6 @@ import cgitb
 import cgi
 #cgitb.enable()
 
-print 'Content-type: text/html'
-print
-print '<html><head>'
-print '<title>MYAPP</title>'
-print '</head><body>'
-
 conn = connect( host = 'MYHOST',
                         port = 3306,
                         user = 'MYUSER',
@@ -35,5 +29,11 @@ death = form.getvalue('death')
 cursor.execute("INSERT INTO pet VALUES (%s, %s, %s, %s, %s, %s)",[name,owner,species,sex,birth,death])
 conn.commit()
 
+print 'Content-type: text/html'
+print
+print '<html><head>'
+print '<title>MyApp60</title>'
+print '<meta http-equiv="Refresh" content="0;url=index.py">'
+print '</head><body>'
 print '<input type="button" value="Reload Page" onClick="location.href=\'index.py\'">'
 print '</body></html>'
