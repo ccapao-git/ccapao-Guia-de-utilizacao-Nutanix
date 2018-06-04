@@ -55,7 +55,9 @@ sudo mkdir /var/www/myapp
 sudo chmod 755 /var/www/myapp
 
 sudo wget https://raw.githubusercontent.com/ccapao-git/ccapao-Guia-de-utilizacao-Nutanix/master/workwithpetdb.py
+sudo wget https://raw.githubusercontent.com/ccapao-git/ccapao-Guia-de-utilizacao-Nutanix/master/workwithpetdb-insert.py
 
+# ficheiro INDEX.HTML (faz queries à DB)
 sudo sed 's/MYAPP/@@{calm_application_name}@@/g' ./workwithpetdb.py | \
 sudo  sed 's/MYHOST/@@{DBService.address}@@/g' | \
 sudo  sed 's/MYPORT/3306/g' | \
@@ -63,13 +65,27 @@ sudo  sed 's/MYUSER/@@{CUSTDBUSER}@@/g' | \
 sudo  sed 's/MYPASS/@@{CUSTDBPASS}@@/g' | \
 sudo  sed 's/MYDB/@@{CUSTDBNAME}@@/g' > index.py
 
+# ficheiro INSERT.HTML (permite inserir dados na DB)
+sudo sed 's/MYAPP/@@{calm_application_name}@@/g' ./workwithpetdb-insert.py | \
+sudo  sed 's/MYHOST/@@{DBService.address}@@/g' | \
+sudo  sed 's/MYPORT/3306/g' | \
+sudo  sed 's/MYUSER/@@{CUSTDBUSER}@@/g' | \
+sudo  sed 's/MYPASS/@@{CUSTDBPASS}@@/g' | \
+sudo  sed 's/MYDB/@@{CUSTDBNAME}@@/g' > insert.py
+
 sudo mv index.py /var/www/myapp/index.py
 sudo chown apache:apache /var/www/myapp/index.py
 sudo chcon -t httpd_sys_script_exec_t /var/www/myapp/index.py
 sudo chmod 755 /var/www/myapp/index.py
 sudo ls -laZ /var/www/myapp/index.py
-
 sudo rm -f workwithpetdb.py
+
+sudo mv insert.py /var/www/myapp/insert.py
+sudo chown apache:apache /var/www/myapp/insert.py
+sudo chcon -t httpd_sys_script_exec_t /var/www/myapp/insert.py
+sudo chmod 755 /var/www/myapp/insert.py
+sudo ls -laZ /var/www/myapp/insert.py
+sudo rm -f workwithpetdb-insert.py
 
 sudo systemctl enable httpd
 sudo systemctl start httpd
