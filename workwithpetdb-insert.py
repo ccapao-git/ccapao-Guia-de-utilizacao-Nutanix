@@ -13,7 +13,7 @@ print '<html><head>'
 print '<title>MYAPP</title>'
 print '</head><body>'
 
-conn = connect( host = 'MYDB',
+conn = connect( host = 'MYHOST',
                         port = 3306,
                         user = 'MYUSER',
                         passwd = 'MYPASS',
