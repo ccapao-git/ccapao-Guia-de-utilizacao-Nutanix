@@ -33,6 +33,8 @@ cursor.execute( "SHOW SESSION VARIABLES WHERE Variable_name IN ('wsrep_cluster_n
 data = cursor.fetchall()
 print(json2html.convert(json = data))
 
+print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
+print '<br>'
 
 print '<br><br>'
 print '<form action="insert.py" method="POST">'
@@ -45,7 +47,6 @@ print ' Data Morte<br><input type="text" name="death" value=""><br><br>'
 print ' <input type="submit" value="Inserir na DB">'
 print ' </form>'
 print '<br>'
-print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
 
 cursor.execute( "SELECT * FROM pet" )
 data = cursor.fetchall()
