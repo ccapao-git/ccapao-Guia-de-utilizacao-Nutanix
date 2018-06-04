@@ -26,13 +26,7 @@ conn = connect( host = 'MYHOST',
 
 cursor = conn.cursor( cursors.DictCursor );
 
-cursor.execute( "SELECT * FROM pet" )
-data = cursor.fetchall()
 
-print
-print "  Web Server: " + srvhostname + "<br>"
-print "  DB Server: " + conn.host + ":" + str(conn.port) + "<br><br>"
-print(json2html.convert(json = data))
 
 print '<br><br>'
 cursor.execute( "SHOW SESSION VARIABLES WHERE Variable_name IN ('wsrep_cluster_name', 'wsrep_cluster_address', 'wsrep_node_address', 'version', 'wsrep_node_name', 'hostname', 'timestamp')" )
@@ -52,4 +46,12 @@ print ' <input type="submit" value="Inserir na DB">'
 print ' </form>'
 
 print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
+
+cursor.execute( "SELECT * FROM pet" )
+data = cursor.fetchall()
+print
+print "  Web Server: " + srvhostname + "<br>"
+print "  DB Server: " + conn.host + ":" + str(conn.port) + "<br><br>"
+print(json2html.convert(json = data))
+
 print '</body></html>'
