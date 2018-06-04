@@ -4,6 +4,7 @@ from pymysql import connect, err, sys, cursors
 from json2html import *
 import socket
 import cgitb
+import cgi
 #cgitb.enable()
 
 print 'Content-type: text/html'
@@ -18,7 +19,7 @@ else:
     srvhostname=socket.gethostbyaddr(socket.gethostname())[0]
 
 conn = connect( host = 'MYHOST',
-                        port = MYPORT,
+                        port = 3306,
                         user = 'MYUSER',
                         passwd = 'MYPASS',
                         db = 'MYDB' );
@@ -38,6 +39,17 @@ cursor.execute( "SHOW SESSION VARIABLES WHERE Variable_name IN ('wsrep_cluster_n
 data = cursor.fetchall()
 print(json2html.convert(json = data))
 
+
 print '<br><br>'
+print '<form action="insert.py" method="POST">'
+print ' Nome<br><input type="text" name="name" value="Bobby"><br><br>'
+print ' Dono<br><input type="text" name="owner" value="John"><br><br>'
+print ' Especie<br><input type="text" name="species" value="Dog"><br><br>'
+print ' Sexo<br><input type="text" name="sex" value="m"><br><br>'
+print ' Data Nascimento<br><input type="text" name="birth" value="2015-03-15"><br><br>'
+print ' Data Morte<br><input type="text" name="death" value=""><br><br>'
+print ' <input type="submit" value="Inserir na DB">'
+print ' </form>'
+
 print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
 print '</body></html>'
