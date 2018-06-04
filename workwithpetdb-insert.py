@@ -35,5 +35,5 @@ death = form.getvalue('death')
 cursor.execute("INSERT INTO pet VALUES (%s, %s, %s, %s, %s, %s)",[name,owner,species,sex,birth,death])
 conn.commit()
 
-print '<input type="button" value="Reload Page" onClick="location.href=index.py">'
+print '<input type="button" value="Reload Page" onClick="location.href=\'index.py\'">'
 print '</body></html>'
