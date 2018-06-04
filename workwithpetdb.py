@@ -44,7 +44,7 @@ print ' Data Nascimento<br><input type="text" name="birth" value="2015-03-15"><b
 print ' Data Morte<br><input type="text" name="death" value=""><br><br>'
 print ' <input type="submit" value="Inserir na DB">'
 print ' </form>'
-
+print '<br>'
 print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
 
 cursor.execute( "SELECT * FROM pet" )
