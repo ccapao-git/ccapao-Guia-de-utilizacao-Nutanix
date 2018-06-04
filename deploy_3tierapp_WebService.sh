@@ -54,8 +54,8 @@ sudo chmod 644 /etc/httpd/conf/httpd.conf
 sudo mkdir /var/www/myapp
 sudo chmod 755 /var/www/myapp
 
-sudo wget https://raw.githubusercontent.com/ccapao-git/ccapao-Guia-de-utilizacao-Nutanix/master/workwithpetdb.py
-sudo wget https://raw.githubusercontent.com/ccapao-git/ccapao-Guia-de-utilizacao-Nutanix/master/workwithpetdb-insert.py
+sudo wget --no-cache https://raw.githubusercontent.com/ccapao-git/ccapao-Guia-de-utilizacao-Nutanix/master/workwithpetdb.py
+sudo wget --no-cache https://raw.githubusercontent.com/ccapao-git/ccapao-Guia-de-utilizacao-Nutanix/master/workwithpetdb-insert.py
 
 # ficheiro INDEX.HTML (faz queries à DB)
 sudo sed 's/MYAPP/@@{calm_application_name}@@/g' ./workwithpetdb.py | \
