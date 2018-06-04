@@ -33,6 +33,7 @@ cursor.execute( "SHOW SESSION VARIABLES WHERE Variable_name IN ('wsrep_cluster_n
 data = cursor.fetchall()
 print(json2html.convert(json = data))
 
+print '<br>'
 print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
 print '<br>'
 
