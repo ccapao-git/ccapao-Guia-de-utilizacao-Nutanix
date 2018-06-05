@@ -1,4 +1,5 @@
 #cloud-config
+hostname: @@{name}@@
 users:
   - name: centos
     ssh-authorized-keys:
