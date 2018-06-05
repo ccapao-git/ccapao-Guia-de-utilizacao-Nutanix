@@ -38,7 +38,7 @@ sudo mysql -u root <<EOF
  flush privileges;
  SELECT User, Host, Password FROM mysql.user;
  USE @@{CUSTDBNAME}@@;
- CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
- INSERT INTO pet VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);
+ CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), species VARCHAR(20), sex CHAR(1), birth DATE);
+ INSERT INTO pet VALUES ('Puffball','Diane','hamster','f','1999-03-30');
  SELECT * from pet;
 EOF
