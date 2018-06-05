@@ -24,9 +24,8 @@ owner = form.getvalue('owner')
 species = form.getvalue('species')
 sex = form.getvalue('sex')
 birth = form.getvalue('birth')
-death = form.getvalue('death')
 
-cursor.execute("INSERT INTO pet VALUES (%s, %s, %s, %s, %s, %s)",[name,owner,species,sex,birth,death])
+cursor.execute("INSERT INTO pet VALUES (%s, %s, %s, %s, %s)",[name,owner,species,sex,birth])
 conn.commit()
 
 print 'Content-type: text/html'
