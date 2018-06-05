@@ -5,8 +5,8 @@
 
 set -ex
 
-sudo hostnamectl set-hostname @@{name}@@
-sudo hostnamectl
+#sudo hostnamectl set-hostname @@{name}@@
+#sudo hostnamectl
 
 sudo echo Nutanix CALM array identifier: @@{calm_array_index}@@ | sudo tee /tmp/arrayid.calm
 
