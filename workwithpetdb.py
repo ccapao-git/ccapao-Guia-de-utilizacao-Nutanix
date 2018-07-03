@@ -52,7 +52,7 @@ print '</table>'
 
 cursor.execute( "SELECT * FROM pet" )
 data = cursor.fetchall()
-print '<br'>
+print '<br>'
 print '  Web Server: ' + srvhostname + ' (<a href="haproxy?stats">stats</a>)<br>'
 print '  DB LB Server: ' + conn.host + ':' + str(conn.port) + ' (<a href="http://' + conn.host + '/haproxy?stats">stats</a>)<br>'
 print '<br>'
