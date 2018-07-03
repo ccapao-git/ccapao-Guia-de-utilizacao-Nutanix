@@ -12,6 +12,7 @@ print
 print '<html><head>'
 print '<title>MYAPP</title>'
 print '</head><body>'
+print '<b><u>MYAPP</u></b><br><br>'
 print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
 
 if socket.gethostname().find('.')>=0:
