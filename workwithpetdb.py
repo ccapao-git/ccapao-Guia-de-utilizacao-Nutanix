@@ -48,13 +48,13 @@ print '  <tr><th></th></tr>'
 print '  <tr><th><input type="submit" value="Inserir na DB"></th></tr>'
 print ' </form>'
 print '</table>'
-print '<br>'
 
 cursor.execute( "SELECT * FROM pet" )
 data = cursor.fetchall()
-print
-print "  Web Server: " + srvhostname + "<br>"
-print "  DB Server: " + conn.host + ":" + str(conn.port) + "<br><br>"
+print '<br'>
+print '  Web Server: ' + srvhostname + '<br>'
+print '  DB LB Server: ' + conn.host + ':' + str(conn.port) + ' (<a href="http://' + conn.host + '/haproxy?stats">stats</a>)<br>'
+print '<br>'
 print(json2html.convert(json = data))
 
 print '</body></html>'
