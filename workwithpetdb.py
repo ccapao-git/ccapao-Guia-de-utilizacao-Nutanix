@@ -12,6 +12,7 @@ print
 print '<html><head>'
 print '<title>MYAPP</title>'
 print '</head><body>'
+print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
 
 if socket.gethostname().find('.')>=0:
     srvhostname=socket.gethostname()
@@ -34,18 +35,19 @@ data = cursor.fetchall()
 print(json2html.convert(json = data))
 
 print '<br>'
-print '<input type="button" value="Reload Page" onClick="window.location.reload()">'
 print '<br>'
 
-print '<br><br>'
-print '<form action="insert.py" method="POST">'
-print ' Nome<br><input type="text" name="name" value="Bobby"><br><br>'
-print ' Dono<br><input type="text" name="owner" value="John"><br><br>'
-print ' Especie<br><input type="text" name="species" value="Dog"><br><br>'
-print ' Sexo<br><input type="text" name="sex" value="m"><br><br>'
-print ' Data Nascimento<br><input type="text" name="birth" value="2015-03-15"><br><br>'
-print ' <input type="submit" value="Inserir na DB">'
+print '<table style="width:1%;white-space:nowrap;">'
+print ' <form action="insert.py" method="POST">'
+print '  <tr><th>Nome</th><th><input type="text" name="name" value="Bobby"></th></tr>'
+print '  <tr><th>Dono</th><th><input type="text" name="owner" value="Pedro"></th></tr>'
+print '  <tr><th>Especie</th><th><input type="text" name="species" value="Dog"></th></tr>'
+print '  <tr><th>Sexo</th><th><input type="text" name="sex" value="m"></th></tr>'
+print '  <tr><th>Data Nascimento</th><th><input type="text" name="birth" value="2015-03-15"></th></tr>'
+print '  <tr><th></th></tr>'
+print '  <tr><th><input type="submit" value="Inserir na DB"></th></tr>'
 print ' </form>'
+print '</table>'
 print '<br>'
 
 cursor.execute( "SELECT * FROM pet" )
