@@ -39,6 +39,6 @@ sudo mysql -u root <<EOF
  SELECT User, Host, Password FROM mysql.user;
  USE @@{CUSTDBNAME}@@;
  CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), species VARCHAR(20), sex CHAR(1), birth DATE, insertdate TIMESTAMP);
- INSERT INTO pet VALUES ('Puffball','Diane','hamster','f','1999-03-30');
+ INSERT INTO pet VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);
  SELECT * from pet;
 EOF
