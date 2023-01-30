@@ -1,0 +1,9 @@
+#cloud-config
+disable_root: no
+ssh_pwauth: yes
+password: 
+chpasswd:
+  list: |
+     root:nutanix/4u
+     almalinux:nutanix/4u
+  expire: False
