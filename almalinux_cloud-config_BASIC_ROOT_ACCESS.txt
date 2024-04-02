@@ -7,3 +7,5 @@ chpasswd:
      root:nutanix/4u
      almalinux:nutanix/4u
   expire: False
+# tested successfully with Almalinux, using default username "almalinux"
+# tested successfully with RockyLinux 9.3, using default username "rocky"
