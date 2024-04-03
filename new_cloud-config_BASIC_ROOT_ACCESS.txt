@@ -1,0 +1,14 @@
+#cloud-config
+disable_root: no
+ssh_pwauth: yes
+password: 
+chpasswd:
+  list: |
+     root:nutanix/4u
+#     centos:nutanix/4u
+#     almalinux:nutanix/4u
+#     rocky:nutanix/4u
+  expire: False
+# tested successfully with cloud-init 19.4, using CentOS 7 (GenericCloud,  2211), using default username "centos"
+# tested successfully with cloud-init 23.1.1-11, using Almalinux 9.3 (GenericCloud, 20231113), using default username "almalinux"
+# tested successfully with cloud-init 23.1.1-11, using RockyLinux 9.3 (GenericCloud, 20231113), using default username "rocky"
